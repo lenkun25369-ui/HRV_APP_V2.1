@@ -12,7 +12,8 @@ def predict_shock(h0_csv_path: str, xgb_model_path: Optional[str] = None):
     testing = pd.read_csv(h0_csv_path)
 
     # 你原本的「drop 第11欄」保留
-    testing = testing.drop(testing.columns[10], axis=1)
+    if testing.shape[1] > 10:
+        testing = testing.drop(testing.columns[10], axis=1)
 
     model = xgb.Booster()
     model.load_model(xgb_model_path)
