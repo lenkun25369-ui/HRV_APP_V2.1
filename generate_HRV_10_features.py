@@ -223,7 +223,7 @@ new_bin0 = np.delete(bin0, index)
 check=[]
 
 for i in new_bin0: 
-    try:
+    
         warnings.filterwarnings("ignore")
         index = np.append(np.arange((i/step0-1)*step0+1, i, step = 1),i)
         index =index.astype(int)-1
@@ -250,8 +250,6 @@ for i in new_bin0:
         hrvpart = pd.concat([hrvpart0, hrvpart], axis=1)
         h0 = pd.concat([h0,hrvpart], ignore_index=True)
 
-    except:
-        continue
 
 h0 = h0.iloc[1:]
 
