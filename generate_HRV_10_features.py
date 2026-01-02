@@ -197,7 +197,7 @@ model
 
 # input raw ECG data
 import pandas as pd
-df = pd.read_csv('ECG_5min.csv')
+df = pd.read_csv(sys.argv[1])
 df
 
 
